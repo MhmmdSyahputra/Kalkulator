@@ -16,36 +16,64 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <style>
+
+        @media (min-width: 320px) and (max-width: 480px) {
+                .col-md-5{
+                    height: 60vh;
+                }
+            
+                .del {
+                    width: 64%;
+                    height: 20%;
+                    border-radius: 10px;
+                }
+
+                input[type="text"]{
+                    font-size: 30px;
+                }
+
+                .btn{
+                    width: 20%;
+                    height: 20%;
+                    margin: 1px;
+                    padding: 0;
+                    font-size: 1rem;
+                }
+        }
+
+        @media (min-width: 1100px){
+            .col-md-5{
+            border: 5px solid blue;
+            }
+
+            input{
+                height: 70px;
+            }
+
+
+            input[type="text"]{
+                font-size: 35px;
+            }
+
+            .del{
+                width: 70%;
+                height: 13%;
+                border-radius: 10px;
+            }
+
+            .btn{
+                width: 90px;
+                height: 60px;
+                margin: 4px;
+                padding: 0;
+                font-size: 35px;
+            }
+        }
+
     	body{
     		background-color: #f0f0f0;
     	}
-    	h1{
-    		background-color: blue;
-    		width: 456px;
-    		margin: 0px;
-    		color: white;
-    	}
-
-    	.col-md-4{
-    		border: 5px solid blue;
-    	}
-
-    	input{
-    		height: 70px;
-    	}
-
-
-    	input[type="text"]{
-    		font-size: 35px;
-    	}
-
-    	.btn{
-    		width: 90px;
-    		height: 60px;
-    		margin: 4px;
-    		padding: 0;
-    		font-size: 35px;
-    	}
+    	
     </style>
 </head>
 <body>
@@ -53,40 +81,45 @@
 
 <center>
 	<form method="post" name="cal" class="form-group">
-		<h1>KALKULATOR PUTRA</h1>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5">
+                    <br>    
 
-		<div class="col-md-4">
-			<br>	
+                    <input type="text" readonly name="tampilan" class="form-control" style="border-bottom: 2px solid #007BFF"><br>
 
-			<input type="text" readonly name="tampilan" class="form-control" style="border-bottom: 5px solid blue"><br>
-
-			<button class="btn btn-primary" type="button" style="width: 295px;" onclick="cal.tampilan.value=''"><font style="letter-spacing: 10px">DELETE</font></button> 
-			<button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='/'">/</button>
-			
-            <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='7'">7</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='8'">8</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='9'">9</button>
+                    <button class="btn-primary del" type="button" onclick="cal.tampilan.value=''"><font style="letter-spacing: 10px">DELETE</font></button> 
+                    <button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='/'">/</button>
+                    
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='7'">7</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='8'">8</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='9'">9</button>
 
 
-			<button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='*'">*</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='4'">4</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='5'">5</button>
-            <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='6'">6</button>
-			
+                    <button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='*'">*</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='4'">4</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='5'">5</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='6'">6</button>
+            
 
-            <button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='-'">-</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='1'">1</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='2'">2</button>
-            <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='3'">3</button>
-			
+                    <button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='-'">-</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='1'">1</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='2'">2</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='3'">3</button>
+            
 
-			
-            <button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='+'">+</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='%'">%</button>
-            <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='0'">0</button>
-			<button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='.'">.</button> 
-			<button class="btn btn-primary" type="button" onclick="cal.tampilan.value=eval(cal.tampilan.value)">=</button>
-		</div>
+            
+                    <button class="btn btn-primary" type="button" onclick="cal.tampilan.value+='+'">+</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='%'">%</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='0'">0</button>
+                    <button class="btn btn-dark" type="button" onclick="cal.tampilan.value+='.'">.</button> 
+                    <button class="btn btn-primary" type="button" onclick="cal.tampilan.value=eval(cal.tampilan.value)">=</button>
+                </div>
+            </div>
+            
+        </div>
+
+		
 		
 	</form>
 </center>
